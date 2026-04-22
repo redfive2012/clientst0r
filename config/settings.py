@@ -509,7 +509,8 @@ REST_FRAMEWORK = {
     ],
     # Disable schema generation in production (not needed without browsable API)
     # In dev, use OpenAPI schema (modern, no coreapi dependency)
-    'DEFAULT_SCHEMA_CLASS': None if not DEBUG else 'rest_framework.schemas.openapi.AutoSchema',
+    #'DEFAULT_SCHEMA_CLASS': None if not DEBUG else 'rest_framework.schemas.openapi.AutoSchema',
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.openapi.AutoSchema',
 }
 
 # Encryption settings
