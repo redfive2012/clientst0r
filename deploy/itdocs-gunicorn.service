@@ -6,12 +6,12 @@ After=network.target
 Type=notify
 User=administrator
 Group=administrator
-WorkingDirectory=/home/administrator
-Environment="PATH=/home/administrator/venv/bin"
-EnvironmentFile=/home/administrator/.env
-ExecStart=/home/administrator/venv/bin/gunicorn \
+WorkingDirectory=/home/huduglue
+Environment="PATH=/opt/venv/bin"
+EnvironmentFile=/app/.env
+ExecStart=/opt/venv/bin/gunicorn \
     --workers 4 \
-    --bind unix:/home/administrator/gunicorn.sock \
+    --bind unix:/home/huduglue/gunicorn.sock \
     --timeout 120 \
     --access-logfile /var/log/itdocs/gunicorn-access.log \
     --error-logfile /var/log/itdocs/gunicorn-error.log \
